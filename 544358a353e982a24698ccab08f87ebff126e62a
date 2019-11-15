@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8eeba654_c603c5d3",
+        "filename": "gui/theme/common/languages/pt_PT.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 1638
+      },
+      "writtenOn": "2019-11-15T14:02:43Z",
+      "side": 1,
+      "message": "Desinstalar a app TWRP do sistema. The letter \"a\" are incorrect in brasilian portuguese, but I don\u0027t if are incorrect in portuguese from Portugal.",
+      "revId": "544358a353e982a24698ccab08f87ebff126e62a",
+      "serverId": "9f904cbb-a964-4fab-a7dc-5cfc4d5c238b",
+      "unresolved": true
+    }
+  ]
+}
