@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6a8cef55_6db5ee7b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1416
+      },
+      "writtenOn": "2023-01-18T04:05:16Z",
+      "side": 1,
+      "message": "Time to drop these too https://github.com/AICP/vendor_aicp/blob/95a7d2ecafe662727f0bde1f9784f872a9171d2f/build/core/main_version.mk#L15",
+      "revId": "355b4e7682c4651e26ad47250c84597c72cbc9e9",
+      "serverId": "9f904cbb-a964-4fab-a7dc-5cfc4d5c238b"
+    }
+  ]
+}
