@@ -180,6 +180,12 @@ static bool yes_no(Device* device, const char* question1, const char* question2)
   return (chosen_item == 1);
 }
 
+bool ask_to_ab_reboot(Device* device) {
+  device->GetUI()->SetProgressType(RecoveryUI::EMPTY);
+  return yes_no(device, "To install additional packages, you need to reboot recovery first",
+                "Do you want to reboot to recovery now?");
+}
+
 bool ask_to_continue_unverified(Device* device) {
   if (get_build_type() == "user") {
     return false;
@@ -864,6 +870,7 @@ Device::BuiltinAction start_recovery(Device* device, const std::vector<std::stri
   std::vector<std::string> title_lines = {
     "AICP Version " + android::base::GetProperty("ro.romstats.version", "(unknown)"),
   };
+  title_lines.push_back("Product name - " + android::base::GetProperty("ro.product.device", ""));
   if (android::base::GetBoolProperty("ro.build.ab_update", false)) {
     std::string slot = android::base::GetProperty("ro.boot.slot_suffix", "");
     if (android::base::StartsWith(slot, "_")) slot.erase(0, 1);
@@ -990,6 +997,7 @@ Device::BuiltinAction start_recovery(Device* device, const std::vector<std::stri
     if (!sideload_auto_reboot) {
       ui->ShowText(true);
     }
+    ui->SetSideloadAutoReboot(sideload_auto_reboot);
     status = ApplyFromAdb(device, false /* rescue_mode */, &next_action);
     ui->Print("\nInstall from ADB complete (status: %d).\n", status);
     if (sideload_auto_reboot) {
